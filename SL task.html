@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Home Task</title>
+<script>
+class student{  
+constructor(name,age,semester){
+this.name = name;
+this.age = age;
+this.semester = semester;
+Object.defineProperty(this,'program',{
+value: 'BS' 
+});
+Object.defineProperty(this,'display',{
+value:function(){
+console.log("Name: ",this.name);
+console.log("Age: ",this.age);
+console.log("Semester: ",this.semester);
+console.log("Program: ",this.program);
+}
+});
+} 
+}
+function findValue(stdArray) {
+userValue = prompt("Enter Value");
+for(i in stdArray){
+for(ii in stdArray[i]){
+if(userValue == stdArray[i][ii]){
+console.log("Value found ",stdArray[i][ii]);
+return;
+}
+}
+}
+console.log("Not Found");
+}
+std1 = new student("Ali",25,2); 
+std2 = new student("Aswad",26,6); 
+std3 = new student("Aqeel",27,3);
+std1.display();
+std2.display();
+std3.display();
+stdArray = new Array(std1,std2,std3);
+findValue(stdArray)
+</script>
+</head>
+<body>
+</body>
+</html>
